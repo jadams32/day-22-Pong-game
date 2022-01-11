@@ -29,6 +29,8 @@ right_paddle.draw_right_paddle()
 left_paddle = Paddle()
 left_paddle.draw_left_paddle()
 
+ball = Ball()
+
 screen.update()
 
 screen.exitonclick()
