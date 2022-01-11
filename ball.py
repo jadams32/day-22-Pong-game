@@ -7,4 +7,10 @@ class Ball(Turtle):
         super().__init__()
         self.color("white")
         self.shape("circle")
+        self.penup()
         self.goto(0, 0)
+
+    def move(self):
+        new_x = self.xcor() + 2
+        new_y = self.ycor() + 2
+        self.goto(new_x, new_y)

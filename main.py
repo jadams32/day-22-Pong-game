@@ -40,5 +40,6 @@ playing = True
 
 while playing:
     screen.update()
+    ball.move()
 
 screen.exitonclick()
