@@ -36,19 +36,12 @@ for num in range(60):
 
 
 screen.update()
-right_paddle = Turtle("square")
-right_paddle.color("White")
-right_paddle.setheading(90)
-right_paddle.turtlesize(stretch_wid=None, stretch_len=5)
-right_paddle.penup()
-right_paddle.goto(x=350, y=0)
+right_paddle = Paddle()
+right_paddle.draw_right_paddle()
 
-left_paddle = Turtle("square")
-left_paddle.color("White")
-left_paddle.setheading(90)
-left_paddle.turtlesize(stretch_wid=None, stretch_len=5)
-left_paddle.penup()
-left_paddle.goto(x=-350, y=0)
+left_paddle = Paddle()
+left_paddle.draw_left_paddle()
+
 screen.update()
 
 screen.exitonclick()
