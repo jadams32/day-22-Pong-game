@@ -11,6 +11,7 @@ from ball import Ball
 from scoreboard import Scoreboard
 screen = Screen()
 screen.setup(width=800, height=600)
+screen.title("Classic Pong")
 screen.bgcolor("black")
 screen.tracer(0)
 
@@ -34,8 +35,20 @@ for num in range(60):
     net.pendown()
 
 
+screen.update()
+right_paddle = Turtle("square")
+right_paddle.color("White")
+right_paddle.setheading(90)
+right_paddle.turtlesize(stretch_wid=None, stretch_len=5)
+right_paddle.penup()
+right_paddle.goto(x=350, y=0)
 
-
-
+left_paddle = Turtle("square")
+left_paddle.color("White")
+left_paddle.setheading(90)
+left_paddle.turtlesize(stretch_wid=None, stretch_len=5)
+left_paddle.penup()
+left_paddle.goto(x=-350, y=0)
+screen.update()
 
 screen.exitonclick()
