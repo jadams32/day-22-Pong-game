@@ -41,7 +41,7 @@ playing = True
 while playing:
     screen.update()
     ball.move()
-    if ball.ycor() > 280:
+    if ball.ycor() > 280 or ball.ycor() < -280:
         ball.change_direction()
 
     if ball.xcor() > 400:

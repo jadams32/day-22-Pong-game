@@ -9,16 +9,16 @@ class Ball(Turtle):
         self.shape("circle")
         self.penup()
         self.goto(0, 0)
+        self.y_move = 2
+        self.x_move = 2
 
     def move(self):
-        new_x = self.xcor() + 2
-        new_y = self.ycor() + 2
+        new_x = self.xcor() - self.x_move
+        new_y = self.ycor() - self.y_move
         self.goto(new_x, new_y)
 
     def change_direction(self):
-        new_x = self.xcor() + 2
-        new_y = self.ycor() - 10
-        self.goto(new_x, new_y)
+        self.y_move *= -1
 
     def reset(self):
         self.goto(0, 0)
