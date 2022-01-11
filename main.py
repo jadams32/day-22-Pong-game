@@ -41,14 +41,27 @@ playing = True
 while playing:
     screen.update()
     ball.move()
+    # Detect Collision with top and bottom walls
     if ball.ycor() > 280 or ball.ycor() < -280:
-        ball.change_direction()
+        ball.change_direction_y()
 
+    # Detect if left user scores a point
     if ball.xcor() > 400:
         left_scoreboard.update_left_scoreboard()
-        ball.reset()
+        ball.reset_ball()
 
+    # Detect if right user scores a point
     if ball.xcor() < -400:
         right_scoreboard.update_right_scoreboard()
-        ball.reset()
+        ball.reset_ball()
+
+    # Detect collision with the right paddle
+    if ball.distance(right_paddle) < 50 and ball.xcor() > 360:
+        ball.change_direction_x()
+
+    # Detect collision with the left paddle
+    if ball.distance(left_paddle) < 50 and ball.xcor() < -360:
+        ball.change_direction_x()
+
+
 screen.exitonclick()
