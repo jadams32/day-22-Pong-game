@@ -6,31 +6,34 @@ FONT_STYLE = ('Chalkboard', 28, 'normal')
 
 class Scoreboard(Turtle):
 
-    def __init__(self):
+    def __init__(self, x_loc, y_loc, side):
         super().__init__()
         self.left_score = 0
         self.right_score = 0
         self.hideturtle()
         self.penup()
         self.color("white")
+        self.goto(x_loc, y_loc)
+        self.draw_scoreboard(side)
+        self.draw_scoreboard(side)
 
-    def draw_left_scoreboard(self):
-        self.goto(-200, 260)
-        self.write(f"Score: {self.left_score}", move=False, align=ALIGNMENT, font=FONT_STYLE)
+    def draw_scoreboard(self, side):
+        if side == "left":
+            score = self.left_score
+        elif side == "right":
+            score = self.right_score
 
-    def draw_right_scoreboard(self):
-        self.goto(200, 260)
-        self.write(f"Score: {self.right_score}", move=False, align=ALIGNMENT, font=FONT_STYLE)
+        self.write(f"Score: {score}", move=False, align=ALIGNMENT, font=FONT_STYLE)
 
     def update_left_scoreboard(self):
         self.left_score += 1
         self.clear()
-        self.draw_left_scoreboard()
+        self.draw_scoreboard("left")
 
     def update_right_scoreboard(self):
         self.right_score += 1
         self.clear()
-        self.draw_left_scoreboard()
+        self.draw_scoreboard("right")
 
 
 class Net(Turtle):

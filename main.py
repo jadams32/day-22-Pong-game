@@ -18,10 +18,8 @@ screen.tracer(0)
 
 net = Net()
 net.draw_net()
-left_scoreboard = Scoreboard()
-left_scoreboard.draw_left_scoreboard()
-right_scoreboard = Scoreboard()
-right_scoreboard.draw_right_scoreboard()
+left_scoreboard = Scoreboard(-200, 260, "left")
+right_scoreboard = Scoreboard(200, 260, "right")
 
 screen.update()
 right_paddle = Paddle(380, 0)
