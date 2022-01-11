@@ -41,5 +41,14 @@ playing = True
 while playing:
     screen.update()
     ball.move()
+    if ball.ycor() > 280:
+        ball.change_direction()
 
+    if ball.xcor() > 400:
+        left_scoreboard.update_left_scoreboard()
+        ball.reset()
+
+    if ball.xcor() < -400:
+        right_scoreboard.update_right_scoreboard()
+        ball.reset()
 screen.exitonclick()
