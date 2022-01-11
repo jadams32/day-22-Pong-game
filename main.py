@@ -9,7 +9,7 @@ from turtle import Turtle, Screen
 from paddle import Paddle
 from ball import Ball
 from scoreboard import Scoreboard, Net
-import time
+
 screen = Screen()
 screen.setup(width=800, height=600)
 screen.title("Classic Pong")
@@ -24,11 +24,8 @@ right_scoreboard = Scoreboard()
 right_scoreboard.draw_right_scoreboard()
 
 screen.update()
-right_paddle = Paddle()
-right_paddle.draw_right_paddle()
-
-left_paddle = Paddle()
-left_paddle.draw_left_paddle()
+right_paddle = Paddle(380, 0)
+left_paddle = Paddle(-380, 0)
 
 ball = Ball()
 
@@ -45,6 +42,5 @@ playing = True
 
 while playing:
     screen.update()
-    time.sleep(.01)
 
 screen.exitonclick()
