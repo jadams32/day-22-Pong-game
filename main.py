@@ -17,7 +17,10 @@ screen.tracer(0)
 
 net = Net()
 net.draw_net()
-
+left_scoreboard = Scoreboard()
+left_scoreboard.draw_left_scoreboard()
+right_scoreboard = Scoreboard()
+right_scoreboard.draw_right_scoreboard()
 
 screen.update()
 right_paddle = Paddle()

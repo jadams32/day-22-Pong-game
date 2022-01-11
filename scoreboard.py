@@ -1,8 +1,36 @@
 from turtle import Turtle
 
+ALIGNMENT = "center"
+FONT_STYLE = ('Chalkboard', 28, 'normal')
+
 
 class Scoreboard(Turtle):
-    pass
+
+    def __init__(self):
+        super().__init__()
+        self.left_score = 0
+        self.right_score = 0
+        self.hideturtle()
+        self.penup()
+        self.color("white")
+
+    def draw_left_scoreboard(self):
+        self.goto(-200, 260)
+        self.write(f"Score: {self.left_score}", move=False, align=ALIGNMENT, font=FONT_STYLE)
+
+    def draw_right_scoreboard(self):
+        self.goto(200, 260)
+        self.write(f"Score: {self.right_score}", move=False, align=ALIGNMENT, font=FONT_STYLE)
+
+    def update_left_scoreboard(self):
+        self.left_score += 1
+        self.clear()
+        self.draw_left_scoreboard()
+
+    def update_right_scoreboard(self):
+        self.right_score += 1
+        self.clear()
+        self.draw_left_scoreboard()
 
 
 class Net(Turtle):
