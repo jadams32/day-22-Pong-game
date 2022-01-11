@@ -19,3 +19,9 @@ class Paddle(Turtle):
         self.turtlesize(stretch_wid=None, stretch_len=5)
         self.penup()
         self.goto(x=-350, y=0)
+
+    def up(self):
+        self.forward(40)
+
+    def down(self):
+        self.back(40)
