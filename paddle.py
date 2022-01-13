@@ -13,7 +13,9 @@ class Paddle(Turtle):
         self.goto(x_loc, y_loc)
 
     def up(self):
-        self.forward(20)
+        """Moves the paddle up."""
+        self.forward(30)
 
     def down(self):
-        self.back(20)
+        """Moves the paddle down."""
+        self.back(30)
